@@ -53,13 +53,3 @@ Search_1_1_006
     Verify Search Success    ${verify_text}    1
     Click Go back Button
 
-*** Comments ***
-    Open Web Browser Google Web
-    Input Search Keywords TH
-    Click Google Search Button 
-    Verify Search Success TH
-    Click Go back Button
-    Press Change Language Button
-    Input Search Keywords ENG
-    Click Google Search Button 
-    Verify Search Success ENG

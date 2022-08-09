@@ -56,38 +56,4 @@ Click And Verify Link 3 5
                 Go Back 
         END
 
-*** Comments ***
-#Search_1_1_003
-Click link 3
-    Click       xpath=(//*[@class='LC20lb MBeuO DKV0Md'])[3]
-Verify Click Link 3 Success
-    ${text}    Get Text   xpath=//*[@id="readme"]/div[2]/article/h1
-    Should Match   ${text}       ${Verify_text_3}
-
-
-#Search_1_1_004 ,#Search_1_1_005
-Click link 4
-    Click       xpath=(//*[@class='LC20lb MBeuO DKV0Md'])[4]
-Verify Click Link 4 Success
-    ${text}    Get Text   xpath=//*[@class="blog-name detail"]
-    Should Match   ${text}       ${Verify_text_4}
-Click link 5
-    Click       xpath=(//*[@class='LC20lb MBeuO DKV0Md'])[5]
-Verify Click Link 5 Success
-    ${text}    Get Text   xpath=//*[@id="readme"]/div[2]/article/h1
-    Should Match   ${text}       ${Verify_text_5}
-
-#Search_1_1_006
-Input Search Keywords TH
-    Fill Text  xpath=/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input       ${search_text_th}
-Verify Search Success TH
-    ${text}    Get Text   xpath=(//*[@class='LC20lb MBeuO DKV0Md'])[1]
-    Should Match    ${text}       ${verify_text_th}
-Press Change Language Button  
-    Keyboard Key    press     Tide
-Input Search Keywords ENG
-    Fill Text  xpath=/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input       ${search_text_eng}
-Verify Search Success ENG
-    ${text}    Get Text   xpath=(//*[@class='LC20lb MBeuO DKV0Md'])[1]
-    Should Match    ${text}       ${verify_text_eng}
     
