@@ -53,3 +53,11 @@ Search_1_1_006
     Verify Search Success    ${verify_text}    1
     Click Go back Button
 
+Search_1_1_007
+    Open Web Browser Google Web
+    Input Search Keywords    ${search_text_1}
+    Click Google Search Button 
+    Verify Search Success    ${verify_text_1}    1
+    ${get_url_href}    Click link    6
+    Verify Click Link Success    ${get_url_href}
+    Verify text in page    ${verify_text_1}

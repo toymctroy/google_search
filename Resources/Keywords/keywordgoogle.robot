@@ -56,4 +56,10 @@ Click And Verify Link 3 5
                 Go Back 
         END
 
+Verify text in page
+    [Arguments]    ${Verify_text}
+    ${text}    Get text    xpath=//body
+    Should Contain    ${text}    ${Verify_text}
+    
+
     
