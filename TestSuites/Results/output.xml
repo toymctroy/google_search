@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.6 on win32)" generated="20220809 15:52:58.572" rpa="false" schemaversion="3">
+<suite id="s1" name="Google" source="D:\google_search\TestSuites\Google.robot">
+<test id="s1-t1" name="Search_1_1_001" line="8">
+<kw name="Open Web Browser Google Web" library="keywordgoogle">
+<kw name="Open Browser" library="Browser">
+<arg>${google_url}</arg>
+<arg>${browser}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.
+Use `New Page` directly instead of `Open Browser` for production and automated execution.
+See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
+<msg timestamp="20220809 15:52:59.416" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg timestamp="20220809 15:52:59.418" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "D:\\google_search\\TestSuites\\Results\\browser\\traces\\23cd934c-0861-42fb-addf-47079f1aed95"}</msg>
+<msg timestamp="20220809 15:53:00.100" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"D:\\google_search\\TestSuites\\Results\\browser\\traces\\23cd934c-0861-42fb-addf-47079f1aed95"}</msg>
+<msg timestamp="20220809 15:53:00.101" level="INFO">{"acceptDownloads": true, "ignoreHTTPSErrors": false, "bypassCSP": true, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false, "reducedMotion": "no-preference", "forcedColors": "none"}</msg>
+<msg timestamp="20220809 15:53:00.131" level="INFO">Successfully created context. </msg>
+<msg timestamp="20220809 15:53:00.131" level="INFO">{'acceptDownloads': True, 'ignoreHTTPSErrors': False, 'bypassCSP': True, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False, 'reducedMotion': 'no-preference', 'forcedColors': 'none'}</msg>
+<msg timestamp="20220809 15:53:01.534" level="INFO">Successfully initialized new page object and opened url: https://www.google.com/</msg>
+<status status="PASS" starttime="20220809 15:52:59.415" endtime="20220809 15:53:01.534"/>
+</kw>
+<status status="PASS" starttime="20220809 15:52:59.414" endtime="20220809 15:53:01.534"/>
+</kw>
+<kw name="Input Search Keywords" library="keywordgoogle">
+<arg>${search_text_1}</arg>
+<kw name="Fill Text" library="Browser">
+<arg>${input_search_path}</arg>
+<arg>${search_text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220809 15:53:01.536" level="INFO">Fills the text 'Robot Framework' in the given field.</msg>
+<status status="PASS" starttime="20220809 15:53:01.536" endtime="20220809 15:53:01.604"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:01.535" endtime="20220809 15:53:01.605"/>
+</kw>
+<kw name="Click Google Search Button" library="keywordgoogle">
+<kw name="Click" library="Browser">
+<arg>${click_search_button_path}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220809 15:53:01.606" endtime="20220809 15:53:01.968"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:01.605" endtime="20220809 15:53:01.968"/>
+</kw>
+<kw name="Verify Search Success" library="keywordgoogle">
+<arg>${verify_text_1}</arg>
+<arg>1</arg>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>xpath=(//*[@class='yuRUbf'])[${link_number}]/a/h3</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20220809 15:53:02.536" level="INFO">${text} = Robot Framework</msg>
+<status status="PASS" starttime="20220809 15:53:01.970" endtime="20220809 15:53:02.536"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${text}</arg>
+<arg>${Verify_text}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220809 15:53:02.536" endtime="20220809 15:53:02.537"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:01.969" endtime="20220809 15:53:02.537"/>
+</kw>
+<tag>On_hold</tag>
+<tag>Search</tag>
+<status status="PASS" starttime="20220809 15:52:59.409" endtime="20220809 15:53:02.539"/>
+</test>
+<test id="s1-t2" name="Search_1_1_002" line="15">
+<kw name="Open Web Browser Google Web" library="keywordgoogle">
+<kw name="Open Browser" library="Browser">
+<arg>${google_url}</arg>
+<arg>${browser}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.
+Use `New Page` directly instead of `Open Browser` for production and automated execution.
+See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
+<msg timestamp="20220809 15:53:02.648" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg timestamp="20220809 15:53:02.650" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "D:\\google_search\\TestSuites\\Results\\browser\\traces\\d510900b-d0cb-4d9d-a287-d3e6fd98a79e"}</msg>
+<msg timestamp="20220809 15:53:03.347" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"D:\\google_search\\TestSuites\\Results\\browser\\traces\\d510900b-d0cb-4d9d-a287-d3e6fd98a79e"}</msg>
+<msg timestamp="20220809 15:53:03.348" level="INFO">{"acceptDownloads": true, "ignoreHTTPSErrors": false, "bypassCSP": true, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false, "reducedMotion": "no-preference", "forcedColors": "none"}</msg>
+<msg timestamp="20220809 15:53:03.365" level="INFO">Successfully created context. </msg>
+<msg timestamp="20220809 15:53:03.365" level="INFO">{'acceptDownloads': True, 'ignoreHTTPSErrors': False, 'bypassCSP': True, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False, 'reducedMotion': 'no-preference', 'forcedColors': 'none'}</msg>
+<msg timestamp="20220809 15:53:04.962" level="INFO">Successfully initialized new page object and opened url: https://www.google.com/</msg>
+<status status="PASS" starttime="20220809 15:53:02.647" endtime="20220809 15:53:04.963"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:02.646" endtime="20220809 15:53:04.963"/>
+</kw>
+<kw name="Input Search Keywords" library="keywordgoogle">
+<arg>${search_text_2}</arg>
+<kw name="Fill Text" library="Browser">
+<arg>${input_search_path}</arg>
+<arg>${search_text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220809 15:53:04.965" level="INFO">Fills the text 'แจ็กสัน หวัง' in the given field.</msg>
+<status status="PASS" starttime="20220809 15:53:04.964" endtime="20220809 15:53:05.022"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:04.963" endtime="20220809 15:53:05.022"/>
+</kw>
+<kw name="Click Google Search Button" library="keywordgoogle">
+<kw name="Click" library="Browser">
+<arg>${click_search_button_path}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220809 15:53:05.024" endtime="20220809 15:53:05.333"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:05.024" endtime="20220809 15:53:05.333"/>
+</kw>
+<kw name="Verify Search Success" library="keywordgoogle">
+<arg>${verify_text_2}</arg>
+<arg>1</arg>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>xpath=(//*[@class='yuRUbf'])[${link_number}]/a/h3</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20220809 15:53:06.066" level="INFO">${text} = แจ็กสัน หวัง - วิกิพีเดีย</msg>
+<status status="PASS" starttime="20220809 15:53:05.335" endtime="20220809 15:53:06.066"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${text}</arg>
+<arg>${Verify_text}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220809 15:53:06.066" endtime="20220809 15:53:06.067"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:05.334" endtime="20220809 15:53:06.067"/>
+</kw>
+<tag>Search</tag>
+<tag>Web</tag>
+<status status="PASS" starttime="20220809 15:53:02.642" endtime="20220809 15:53:06.068"/>
+</test>
+<test id="s1-t3" name="Search_1_1_003" line="22">
+<kw name="Open Web Browser Google Web" library="keywordgoogle">
+<kw name="Open Browser" library="Browser">
+<arg>${google_url}</arg>
+<arg>${browser}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.
+Use `New Page` directly instead of `Open Browser` for production and automated execution.
+See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
+<msg timestamp="20220809 15:53:06.152" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg timestamp="20220809 15:53:06.154" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "D:\\google_search\\TestSuites\\Results\\browser\\traces\\bda6f26b-7aaf-4b68-b42d-da239ae74417"}</msg>
+<msg timestamp="20220809 15:53:06.878" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"D:\\google_search\\TestSuites\\Results\\browser\\traces\\bda6f26b-7aaf-4b68-b42d-da239ae74417"}</msg>
+<msg timestamp="20220809 15:53:06.879" level="INFO">{"acceptDownloads": true, "ignoreHTTPSErrors": false, "bypassCSP": true, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false, "reducedMotion": "no-preference", "forcedColors": "none"}</msg>
+<msg timestamp="20220809 15:53:06.895" level="INFO">Successfully created context. </msg>
+<msg timestamp="20220809 15:53:06.895" level="INFO">{'acceptDownloads': True, 'ignoreHTTPSErrors': False, 'bypassCSP': True, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False, 'reducedMotion': 'no-preference', 'forcedColors': 'none'}</msg>
+<msg timestamp="20220809 15:53:09.937" level="INFO">Successfully initialized new page object and opened url: https://www.google.com/</msg>
+<status status="PASS" starttime="20220809 15:53:06.151" endtime="20220809 15:53:09.938"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:06.150" endtime="20220809 15:53:09.938"/>
+</kw>
+<kw name="Input Search Keywords" library="keywordgoogle">
+<arg>${search_text_1}</arg>
+<kw name="Fill Text" library="Browser">
+<arg>${input_search_path}</arg>
+<arg>${search_text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220809 15:53:09.940" level="INFO">Fills the text 'Robot Framework' in the given field.</msg>
+<status status="PASS" starttime="20220809 15:53:09.940" endtime="20220809 15:53:10.002"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:09.939" endtime="20220809 15:53:10.002"/>
+</kw>
+<kw name="Click Google Search Button" library="keywordgoogle">
+<kw name="Click" library="Browser">
+<arg>${click_search_button_path}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220809 15:53:10.004" endtime="20220809 15:53:10.365"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:10.003" endtime="20220809 15:53:10.365"/>
+</kw>
+<kw name="Verify Search Success" library="keywordgoogle">
+<arg>${verify_text_1}</arg>
+<arg>1</arg>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>xpath=(//*[@class='yuRUbf'])[${link_number}]/a/h3</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20220809 15:53:10.833" level="INFO">${text} = Robot Framework</msg>
+<status status="PASS" starttime="20220809 15:53:10.367" endtime="20220809 15:53:10.833"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${text}</arg>
+<arg>${Verify_text}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220809 15:53:10.833" endtime="20220809 15:53:10.833"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:10.366" endtime="20220809 15:53:10.834"/>
+</kw>
+<kw name="Click link" library="keywordgoogle">
+<var>${get_url_href}</var>
+<arg>3</arg>
+<kw name="Get Attribute" library="Browser">
+<var>${get_url_href}</var>
+<arg>xpath=(//*[@class='yuRUbf'])[${link_number}]/a</arg>
+<arg>href</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the HTML ``attribute`` of the element found by ``selector``.</doc>
+<msg timestamp="20220809 15:53:10.856" level="INFO">${get_url_href} = https://th.jobsdb.com/th/th/search-jobs/robot-framework/1</msg>
+<status status="PASS" starttime="20220809 15:53:10.835" endtime="20220809 15:53:10.856"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>xpath=(//*[@class='yuRUbf'])[${link_number}]/a/h3</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220809 15:53:10.856" endtime="20220809 15:53:11.233"/>
+</kw>
+<return>
+<value>${get_url_href}</value>
+<status status="PASS" starttime="20220809 15:53:11.233" endtime="20220809 15:53:11.233"/>
+</return>
+<msg timestamp="20220809 15:53:11.233" level="INFO">${get_url_href} = https://th.jobsdb.com/th/th/search-jobs/robot-framework/1</msg>
+<status status="PASS" starttime="20220809 15:53:10.834" endtime="20220809 15:53:11.233"/>
+</kw>
+<kw name="Verify Click Link Success" library="keywordgoogle">
+<arg>${get_url_href}</arg>
+<kw name="Get Url" library="Browser">
+<var>${get_url_page}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<msg timestamp="20220809 15:53:11.237" level="INFO">${get_url_page} = https://th.jobsdb.com/th/th/search-jobs/robot-framework/1</msg>
+<status status="PASS" starttime="20220809 15:53:11.235" endtime="20220809 15:53:11.237"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${get_url_page}</arg>
+<arg>${get_url_href}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220809 15:53:11.238" endtime="20220809 15:53:11.238"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:11.234" endtime="20220809 15:53:11.239"/>
+</kw>
+<tag>Click</tag>
+<tag>Search</tag>
+<status status="PASS" starttime="20220809 15:53:06.144" endtime="20220809 15:53:11.239"/>
+</test>
+<test id="s1-t4" name="Search_1_1_004" line="31">
+<kw name="Open Web Browser Google Web" library="keywordgoogle">
+<kw name="Open Browser" library="Browser">
+<arg>${google_url}</arg>
+<arg>${browser}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.
+Use `New Page` directly instead of `Open Browser` for production and automated execution.
+See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
+<msg timestamp="20220809 15:53:11.359" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg timestamp="20220809 15:53:11.361" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "D:\\google_search\\TestSuites\\Results\\browser\\traces\\69f41f21-3b46-4d43-a3ae-f11716290d1a"}</msg>
+<msg timestamp="20220809 15:53:12.129" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"D:\\google_search\\TestSuites\\Results\\browser\\traces\\69f41f21-3b46-4d43-a3ae-f11716290d1a"}</msg>
+<msg timestamp="20220809 15:53:12.129" level="INFO">{"acceptDownloads": true, "ignoreHTTPSErrors": false, "bypassCSP": true, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false, "reducedMotion": "no-preference", "forcedColors": "none"}</msg>
+<msg timestamp="20220809 15:53:12.151" level="INFO">Successfully created context. </msg>
+<msg timestamp="20220809 15:53:12.151" level="INFO">{'acceptDownloads': True, 'ignoreHTTPSErrors': False, 'bypassCSP': True, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False, 'reducedMotion': 'no-preference', 'forcedColors': 'none'}</msg>
+<msg timestamp="20220809 15:53:13.760" level="INFO">Successfully initialized new page object and opened url: https://www.google.com/</msg>
+<status status="PASS" starttime="20220809 15:53:11.356" endtime="20220809 15:53:13.760"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:11.355" endtime="20220809 15:53:13.761"/>
+</kw>
+<kw name="Input Search Keywords" library="keywordgoogle">
+<arg>${search_text_1}</arg>
+<kw name="Fill Text" library="Browser">
+<arg>${input_search_path}</arg>
+<arg>${search_text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220809 15:53:13.763" level="INFO">Fills the text 'Robot Framework' in the given field.</msg>
+<status status="PASS" starttime="20220809 15:53:13.762" endtime="20220809 15:53:13.821"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:13.762" endtime="20220809 15:53:13.821"/>
+</kw>
+<kw name="Click Google Search Button" library="keywordgoogle">
+<kw name="Click" library="Browser">
+<arg>${click_search_button_path}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220809 15:53:13.823" endtime="20220809 15:53:14.108"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:13.822" endtime="20220809 15:53:14.109"/>
+</kw>
+<kw name="Verify Search Success" library="keywordgoogle">
+<arg>${verify_text_1}</arg>
+<arg>1</arg>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>xpath=(//*[@class='yuRUbf'])[${link_number}]/a/h3</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20220809 15:53:14.627" level="INFO">${text} = Robot Framework</msg>
+<status status="PASS" starttime="20220809 15:53:14.111" endtime="20220809 15:53:14.627"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${text}</arg>
+<arg>${Verify_text}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220809 15:53:14.627" endtime="20220809 15:53:14.628"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:14.109" endtime="20220809 15:53:14.628"/>
+</kw>
+<kw name="Click And Verify Link 3 4 5" library="keywordgoogle">
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>3</value>
+<value>6</value>
+<iter>
+<var name="${index}">3</var>
+<kw name="Get Attribute" library="Browser">
+<var>${get_url_href}</var>
+<arg>xpath=(//*[@class='yuRUbf'])[${index}]/a</arg>
+<arg>href</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the HTML ``attribute`` of the element found by ``selector``.</doc>
+<msg timestamp="20220809 15:53:14.656" level="INFO">${get_url_href} = https://th.jobsdb.com/th/th/search-jobs/robot-framework/1</msg>
+<status status="PASS" starttime="20220809 15:53:14.630" endtime="20220809 15:53:14.656"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>xpath=(//*[@class='yuRUbf'])[${index}]/a/h3</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220809 15:53:14.656" endtime="20220809 15:53:15.452"/>
+</kw>
+<kw name="Get Url" library="Browser">
+<var>${get_url_page}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<msg timestamp="20220809 15:53:15.456" level="INFO">${get_url_page} = https://th.jobsdb.com/th/th/search-jobs/robot-framework/1</msg>
+<status status="PASS" starttime="20220809 15:53:15.452" endtime="20220809 15:53:15.456"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${get_url_page}</arg>
+<arg>${get_url_href}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220809 15:53:15.456" endtime="20220809 15:53:15.457"/>
+</kw>
+<kw name="Go Back" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the previous page in history.</doc>
+<msg timestamp="20220809 15:53:16.240" level="INFO">Did Go Back</msg>
+<status status="PASS" starttime="20220809 15:53:15.457" endtime="20220809 15:53:16.240"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:14.629" endtime="20220809 15:53:16.240"/>
+</iter>
+<iter>
+<var name="${index}">4</var>
+<kw name="Get Attribute" library="Browser">
+<var>${get_url_href}</var>
+<arg>xpath=(//*[@class='yuRUbf'])[${index}]/a</arg>
+<arg>href</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the HTML ``attribute`` of the element found by ``selector``.</doc>
+<msg timestamp="20220809 15:53:16.319" level="INFO">${get_url_href} = https://www.somkiat.cc/robot-framework-5/</msg>
+<status status="PASS" starttime="20220809 15:53:16.241" endtime="20220809 15:53:16.319"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>xpath=(//*[@class='yuRUbf'])[${index}]/a/h3</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220809 15:53:16.320" endtime="20220809 15:53:16.594"/>
+</kw>
+<kw name="Get Url" library="Browser">
+<var>${get_url_page}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<msg timestamp="20220809 15:53:16.597" level="INFO">${get_url_page} = https://www.somkiat.cc/robot-framework-5/</msg>
+<status status="PASS" starttime="20220809 15:53:16.594" endtime="20220809 15:53:16.597"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${get_url_page}</arg>
+<arg>${get_url_href}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220809 15:53:16.597" endtime="20220809 15:53:16.598"/>
+</kw>
+<kw name="Go Back" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the previous page in history.</doc>
+<msg timestamp="20220809 15:53:17.787" level="INFO">Did Go Back</msg>
+<status status="PASS" starttime="20220809 15:53:16.598" endtime="20220809 15:53:17.787"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:16.240" endtime="20220809 15:53:17.787"/>
+</iter>
+<iter>
+<var name="${index}">5</var>
+<kw name="Get Attribute" library="Browser">
+<var>${get_url_href}</var>
+<arg>xpath=(//*[@class='yuRUbf'])[${index}]/a</arg>
+<arg>href</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the HTML ``attribute`` of the element found by ``selector``.</doc>
+<msg timestamp="20220809 15:53:17.912" level="INFO">${get_url_href} = https://www.stream.co.th/%E0%B8%A1%E0%B8%B2%E0%B8%97%E0%B8%B3%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%A3%E0%B8%B9%E0%B9%89%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%81%E0%B8%B1%E0%B8%9A-robot-framework-%E0%B...</msg>
+<status status="PASS" starttime="20220809 15:53:17.788" endtime="20220809 15:53:17.912"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>xpath=(//*[@class='yuRUbf'])[${index}]/a/h3</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220809 15:53:17.913" endtime="20220809 15:53:18.784"/>
+</kw>
+<kw name="Get Url" library="Browser">
+<var>${get_url_page}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<msg timestamp="20220809 15:53:18.789" level="INFO">${get_url_page} = https://www.stream.co.th/%E0%B8%A1%E0%B8%B2%E0%B8%97%E0%B8%B3%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%A3%E0%B8%B9%E0%B9%89%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%81%E0%B8%B1%E0%B8%9A-robot-framework-%E0%B...</msg>
+<status status="PASS" starttime="20220809 15:53:18.785" endtime="20220809 15:53:18.789"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${get_url_page}</arg>
+<arg>${get_url_href}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220809 15:53:18.790" endtime="20220809 15:53:18.790"/>
+</kw>
+<kw name="Go Back" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the previous page in history.</doc>
+<msg timestamp="20220809 15:53:19.666" level="INFO">Did Go Back</msg>
+<status status="PASS" starttime="20220809 15:53:18.791" endtime="20220809 15:53:19.666"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:17.788" endtime="20220809 15:53:19.666"/>
+</iter>
+<status status="PASS" starttime="20220809 15:53:14.629" endtime="20220809 15:53:19.666"/>
+</for>
+<status status="PASS" starttime="20220809 15:53:14.629" endtime="20220809 15:53:19.666"/>
+</kw>
+<tag>Search</tag>
+<status status="PASS" starttime="20220809 15:53:11.352" endtime="20220809 15:53:19.667"/>
+</test>
+<test id="s1-t5" name="Search_1_1_005" line="39">
+<kw name="Open Web Browser Google Web" library="keywordgoogle">
+<kw name="Open Browser" library="Browser">
+<arg>${google_url}</arg>
+<arg>${browser}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.
+Use `New Page` directly instead of `Open Browser` for production and automated execution.
+See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
+<msg timestamp="20220809 15:53:19.753" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg timestamp="20220809 15:53:19.755" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "D:\\google_search\\TestSuites\\Results\\browser\\traces\\6ce9dd63-3516-44ce-916c-a61050131cbf"}</msg>
+<msg timestamp="20220809 15:53:20.645" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"D:\\google_search\\TestSuites\\Results\\browser\\traces\\6ce9dd63-3516-44ce-916c-a61050131cbf"}</msg>
+<msg timestamp="20220809 15:53:20.646" level="INFO">{"acceptDownloads": true, "ignoreHTTPSErrors": false, "bypassCSP": true, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false, "reducedMotion": "no-preference", "forcedColors": "none"}</msg>
+<msg timestamp="20220809 15:53:20.679" level="INFO">Successfully created context. </msg>
+<msg timestamp="20220809 15:53:20.679" level="INFO">{'acceptDownloads': True, 'ignoreHTTPSErrors': False, 'bypassCSP': True, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False, 'reducedMotion': 'no-preference', 'forcedColors': 'none'}</msg>
+<msg timestamp="20220809 15:53:22.263" level="INFO">Successfully initialized new page object and opened url: https://www.google.com/</msg>
+<status status="PASS" starttime="20220809 15:53:19.752" endtime="20220809 15:53:22.263"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:19.752" endtime="20220809 15:53:22.264"/>
+</kw>
+<kw name="Input Search Keywords" library="keywordgoogle">
+<arg>${search_text_1}</arg>
+<kw name="Fill Text" library="Browser">
+<arg>${input_search_path}</arg>
+<arg>${search_text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220809 15:53:22.266" level="INFO">Fills the text 'Robot Framework' in the given field.</msg>
+<status status="PASS" starttime="20220809 15:53:22.265" endtime="20220809 15:53:22.373"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:22.264" endtime="20220809 15:53:22.373"/>
+</kw>
+<kw name="Click Google Search Button" library="keywordgoogle">
+<kw name="Click" library="Browser">
+<arg>${click_search_button_path}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220809 15:53:22.390" endtime="20220809 15:53:22.881"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:22.390" endtime="20220809 15:53:22.882"/>
+</kw>
+<kw name="Verify Search Success" library="keywordgoogle">
+<arg>${verify_text_1}</arg>
+<arg>1</arg>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>xpath=(//*[@class='yuRUbf'])[${link_number}]/a/h3</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20220809 15:53:23.248" level="INFO">${text} = Robot Framework</msg>
+<status status="PASS" starttime="20220809 15:53:22.884" endtime="20220809 15:53:23.248"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${text}</arg>
+<arg>${Verify_text}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220809 15:53:23.248" endtime="20220809 15:53:23.249"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:22.882" endtime="20220809 15:53:23.249"/>
+</kw>
+<kw name="Click And Verify Link 3 5" library="keywordgoogle">
+<for flavor="IN RANGE">
+<var>${index}</var>
+<value>3</value>
+<value>6</value>
+<iter>
+<var name="${index}">3</var>
+<kw name="Continue For Loop If" library="BuiltIn">
+<arg>${index}==4</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220809 15:53:23.251" endtime="20220809 15:53:23.252"/>
+</kw>
+<kw name="Get Attribute" library="Browser">
+<var>${get_url_href}</var>
+<arg>xpath=(//*[@class='yuRUbf'])[${index}]/a</arg>
+<arg>href</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the HTML ``attribute`` of the element found by ``selector``.</doc>
+<msg timestamp="20220809 15:53:23.599" level="INFO">${get_url_href} = https://th.jobsdb.com/th/th/search-jobs/robot-framework/1</msg>
+<status status="PASS" starttime="20220809 15:53:23.253" endtime="20220809 15:53:23.599"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>xpath=(//*[@class='yuRUbf'])[${index}]/a/h3</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220809 15:53:23.600" endtime="20220809 15:53:23.999"/>
+</kw>
+<kw name="Get Url" library="Browser">
+<var>${get_url_page}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<msg timestamp="20220809 15:53:24.004" level="INFO">${get_url_page} = https://th.jobsdb.com/th/th/search-jobs/robot-framework/1</msg>
+<status status="PASS" starttime="20220809 15:53:23.999" endtime="20220809 15:53:24.004"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${get_url_page}</arg>
+<arg>${get_url_href}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220809 15:53:24.005" endtime="20220809 15:53:24.005"/>
+</kw>
+<kw name="Go Back" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the previous page in history.</doc>
+<msg timestamp="20220809 15:53:25.282" level="INFO">Did Go Back</msg>
+<status status="PASS" starttime="20220809 15:53:24.006" endtime="20220809 15:53:25.282"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:23.251" endtime="20220809 15:53:25.282"/>
+</iter>
+<iter>
+<var name="${index}">4</var>
+<kw name="Continue For Loop If" library="BuiltIn">
+<arg>${index}==4</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<msg timestamp="20220809 15:53:25.284" level="INFO">Continuing for loop from the next iteration.</msg>
+<status status="PASS" starttime="20220809 15:53:25.283" endtime="20220809 15:53:25.285"/>
+</kw>
+<kw name="Get Attribute" library="Browser">
+<var>${get_url_href}</var>
+<arg>xpath=(//*[@class='yuRUbf'])[${index}]/a</arg>
+<arg>href</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the HTML ``attribute`` of the element found by ``selector``.</doc>
+<status status="NOT RUN" starttime="20220809 15:53:25.285" endtime="20220809 15:53:25.285"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>xpath=(//*[@class='yuRUbf'])[${index}]/a/h3</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="NOT RUN" starttime="20220809 15:53:25.286" endtime="20220809 15:53:25.286"/>
+</kw>
+<kw name="Get Url" library="Browser">
+<var>${get_url_page}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="NOT RUN" starttime="20220809 15:53:25.286" endtime="20220809 15:53:25.286"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${get_url_page}</arg>
+<arg>${get_url_href}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="NOT RUN" starttime="20220809 15:53:25.286" endtime="20220809 15:53:25.286"/>
+</kw>
+<kw name="Go Back" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the previous page in history.</doc>
+<status status="NOT RUN" starttime="20220809 15:53:25.286" endtime="20220809 15:53:25.287"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:25.283" endtime="20220809 15:53:25.287"/>
+</iter>
+<iter>
+<var name="${index}">5</var>
+<kw name="Continue For Loop If" library="BuiltIn">
+<arg>${index}==4</arg>
+<doc>Skips the current FOR loop iteration if the ``condition`` is true.</doc>
+<status status="PASS" starttime="20220809 15:53:25.287" endtime="20220809 15:53:25.288"/>
+</kw>
+<kw name="Get Attribute" library="Browser">
+<var>${get_url_href}</var>
+<arg>xpath=(//*[@class='yuRUbf'])[${index}]/a</arg>
+<arg>href</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the HTML ``attribute`` of the element found by ``selector``.</doc>
+<msg timestamp="20220809 15:53:25.340" level="INFO">${get_url_href} = https://www.stream.co.th/%E0%B8%A1%E0%B8%B2%E0%B8%97%E0%B8%B3%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%A3%E0%B8%B9%E0%B9%89%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%81%E0%B8%B1%E0%B8%9A-robot-framework-%E0%B...</msg>
+<status status="PASS" starttime="20220809 15:53:25.288" endtime="20220809 15:53:25.340"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>xpath=(//*[@class='yuRUbf'])[${index}]/a/h3</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220809 15:53:25.341" endtime="20220809 15:53:26.213"/>
+</kw>
+<kw name="Get Url" library="Browser">
+<var>${get_url_page}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<msg timestamp="20220809 15:53:26.216" level="INFO">${get_url_page} = https://www.stream.co.th/%E0%B8%A1%E0%B8%B2%E0%B8%97%E0%B8%B3%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%A3%E0%B8%B9%E0%B9%89%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%81%E0%B8%B1%E0%B8%9A-robot-framework-%E0%B...</msg>
+<status status="PASS" starttime="20220809 15:53:26.213" endtime="20220809 15:53:26.216"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${get_url_page}</arg>
+<arg>${get_url_href}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220809 15:53:26.217" endtime="20220809 15:53:26.219"/>
+</kw>
+<kw name="Go Back" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the previous page in history.</doc>
+<msg timestamp="20220809 15:53:27.527" level="INFO">Did Go Back</msg>
+<status status="PASS" starttime="20220809 15:53:26.219" endtime="20220809 15:53:27.527"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:25.287" endtime="20220809 15:53:27.527"/>
+</iter>
+<status status="PASS" starttime="20220809 15:53:23.250" endtime="20220809 15:53:27.527"/>
+</for>
+<status status="PASS" starttime="20220809 15:53:23.250" endtime="20220809 15:53:27.527"/>
+</kw>
+<tag>Search</tag>
+<status status="PASS" starttime="20220809 15:53:19.746" endtime="20220809 15:53:27.528"/>
+</test>
+<test id="s1-t6" name="Search_1_1_006" line="47">
+<kw name="Open Web Browser Google Web" library="keywordgoogle">
+<kw name="Open Browser" library="Browser">
+<arg>${google_url}</arg>
+<arg>${browser}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Opens a new browser instance. Use this keyword for quick experiments or debugging sessions.
+Use `New Page` directly instead of `Open Browser` for production and automated execution.
+See `Browser, Context and Page` for more information about Browser and related concepts.</doc>
+<msg timestamp="20220809 15:53:27.615" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg timestamp="20220809 15:53:27.617" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "D:\\google_search\\TestSuites\\Results\\browser\\traces\\a3fe194d-d5eb-4a4b-afbb-d1ec8c0339e7"}</msg>
+<msg timestamp="20220809 15:53:28.458" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"D:\\google_search\\TestSuites\\Results\\browser\\traces\\a3fe194d-d5eb-4a4b-afbb-d1ec8c0339e7"}</msg>
+<msg timestamp="20220809 15:53:28.460" level="INFO">{"acceptDownloads": true, "ignoreHTTPSErrors": false, "bypassCSP": true, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false, "reducedMotion": "no-preference", "forcedColors": "none"}</msg>
+<msg timestamp="20220809 15:53:28.480" level="INFO">Successfully created context. </msg>
+<msg timestamp="20220809 15:53:28.480" level="INFO">{'acceptDownloads': True, 'ignoreHTTPSErrors': False, 'bypassCSP': True, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False, 'reducedMotion': 'no-preference', 'forcedColors': 'none'}</msg>
+<msg timestamp="20220809 15:53:30.222" level="INFO">Successfully initialized new page object and opened url: https://www.google.com/</msg>
+<status status="PASS" starttime="20220809 15:53:27.614" endtime="20220809 15:53:30.222"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:27.613" endtime="20220809 15:53:30.223"/>
+</kw>
+<kw name="Input Search Keywords" library="keywordgoogle">
+<arg>${search_text}</arg>
+<kw name="Fill Text" library="Browser">
+<arg>${input_search_path}</arg>
+<arg>${search_text}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220809 15:53:30.225" level="INFO">Fills the text 'แจ็กสัน หวัง ประวัติ' in the given field.</msg>
+<status status="PASS" starttime="20220809 15:53:30.224" endtime="20220809 15:53:30.278"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:30.223" endtime="20220809 15:53:30.278"/>
+</kw>
+<kw name="Click Google Search Button" library="keywordgoogle">
+<kw name="Click" library="Browser">
+<arg>${click_search_button_path}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20220809 15:53:30.280" endtime="20220809 15:53:30.736"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:30.279" endtime="20220809 15:53:30.736"/>
+</kw>
+<kw name="Verify Search Success" library="keywordgoogle">
+<arg>${verify_text}</arg>
+<arg>1</arg>
+<kw name="Get Text" library="Browser">
+<var>${text}</var>
+<arg>xpath=(//*[@class='yuRUbf'])[${link_number}]/a/h3</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20220809 15:53:31.528" level="INFO">${text} = แจ็กสัน หวัง - วิกิพีเดีย</msg>
+<status status="PASS" starttime="20220809 15:53:30.738" endtime="20220809 15:53:31.528"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${text}</arg>
+<arg>${Verify_text}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220809 15:53:31.528" endtime="20220809 15:53:31.529"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:30.737" endtime="20220809 15:53:31.529"/>
+</kw>
+<kw name="Click Go back Button" library="keywordgoogle">
+<kw name="Go Back" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the previous page in history.</doc>
+<msg timestamp="20220809 15:53:32.406" level="INFO">Did Go Back</msg>
+<status status="PASS" starttime="20220809 15:53:31.530" endtime="20220809 15:53:32.407"/>
+</kw>
+<status status="PASS" starttime="20220809 15:53:31.529" endtime="20220809 15:53:32.407"/>
+</kw>
+<tag>Search</tag>
+<status status="PASS" starttime="20220809 15:53:27.607" endtime="20220809 15:53:32.409"/>
+</test>
+<status status="PASS" starttime="20220809 15:52:58.574" endtime="20220809 15:53:32.487"/>
+</suite>
+<statistics>
+<total>
+<stat pass="6" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Click</stat>
+<stat pass="1" fail="0" skip="0">On_hold</stat>
+<stat pass="6" fail="0" skip="0">Search</stat>
+<stat pass="1" fail="0" skip="0">Web</stat>
+</tag>
+<suite>
+<stat pass="6" fail="0" skip="0" id="s1" name="Google">Google</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220809 15:52:59.416" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg timestamp="20220809 15:53:02.648" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg timestamp="20220809 15:53:06.152" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg timestamp="20220809 15:53:11.359" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg timestamp="20220809 15:53:19.753" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+<msg timestamp="20220809 15:53:27.615" level="WARN">Open Browser is for quick experimentation and debugging only. Use New Page for production.</msg>
+</errors>
+</robot>
